@@ -54,7 +54,7 @@ public class Cart {
 				if(Integer.parseInt(details[0])==Id)
 				{
 					newList=newList+details[0]+":" + details[1] +":"  + details[2]+ ":"+ 
-							(Integer.parseInt(details[0])+1)+"|";
+							(Integer.parseInt(details[3])+1)+"|";
 					added=true;
 				}
 				else
