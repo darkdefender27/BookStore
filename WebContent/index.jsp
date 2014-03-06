@@ -46,6 +46,18 @@
 	<div class="row col-md-2">
 	</div>
 </div>
+
+
+
+
+<!-- Button for View Cart -->	
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#cartModal" onclick="getCartProducts()">View Cart</button>
+<jsp:include page="cart.jsp"></jsp:include>
+
+
+
+
+
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
