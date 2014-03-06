@@ -22,7 +22,9 @@ public class Cart {
 	}
 	public void addToCart(HttpServletRequest request,HttpServletResponse response,Integer Id,String Name,Float Price)
 	{
+		//System.out.println("called");
 		String cartProducts="";
+		String products[]=null;
 		Cookie cookie = null;
 		Cookie[] cookies = null;
 		cookies=request.getCookies();
@@ -36,10 +38,41 @@ public class Cart {
 		         }
 		        	 
 		      }
-		  }
-		System.out.println("Products"+cartProducts);
-		cartProducts =cartProducts+ Id +":" + Name +":"  + Price+ "|";
-		Cookie cartProductCookie = new Cookie("cartProduct",cartProducts);
+		}
+		//System.out.println("Products"+cartProducts);
+		//cartProducts =cartProducts+ Id +":" + Name +":"  + Price+ "|";
+		String newList="";
+		System.out.println("called="+cartProducts);
+		if(!cartProducts.equals(""))
+		{
+			boolean added=false;
+			products=cartProducts.split("[|]");
+			for(int i=0;i<products.length;i++)
+			{
+				System.out.println("Products"+cartProducts);
+				String[] details=products[i].split(":");
+				if(Integer.parseInt(details[0])==Id)
+				{
+					newList=newList+details[0]+":" + details[1] +":"  + details[2]+ ":"+ 
+							(Integer.parseInt(details[0])+1)+"|";
+					added=true;
+				}
+				else
+				{
+					newList=newList+products[i]+"|";
+				}
+			}
+			if(!added)
+			{
+				newList=newList+Id+ ":" +Name +":" + Price +":1|";
+			}
+		}
+		else
+		{
+			newList=newList+Id+ ":" +Name +":" + Price +":1|";
+			//System.out.println("First Added");
+		}
+		Cookie cartProductCookie = new Cookie("cartProduct",newList);
 		cartProductCookie.setMaxAge(10*24*60*60*1000); 
 		response.addCookie(cartProductCookie);
 	}
@@ -63,7 +96,7 @@ public class Cart {
 		      }
 		  }
 
-		System.out.println(cartProducts);
+		//System.out.println(cartProducts);
 		if(!cartProducts.equals(""))
 		{
 			products=cartProducts.split("[|]");
