@@ -84,7 +84,7 @@
 				else
 				{%>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a data-toggle="modal" data-target="#myModal" onclick="getCartProducts()">Login</a></li>
+					<li><a data-toggle="modal" data-target="#myModal" onclick="getCartProducts()" href="#">Login</a></li>
 					<li><a href="#">SignUp</a></li>
 				</ul>
 				<%} %>
@@ -92,14 +92,7 @@
     					<div class="input-group">
       						<input type="text" class="form-control">
       						<div class="input-group-btn">
-	        					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Search <span class="caret"></span></button>
-						        <ul class="dropdown-menu pull-right">
-						          <li><a href="#">Action</a></li>
-						          <li><a href="#">Another action</a></li>
-						          <li><a href="#">Something else here</a></li>
-						          <li class="divider"></li>
-						          <li><a href="#">Separated link</a></li>
-						        </ul>
+	        					<button type="button" class="btn btn-primary" data-toggle="dropdown">Search </button>
 					      </div><!-- /btn-group -->
 					    </div><!-- /input-group -->
 			    </form>
