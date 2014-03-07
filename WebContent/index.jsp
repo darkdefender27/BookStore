@@ -49,12 +49,12 @@
 
 
 
-
-<!-- Button for View Cart -->	
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#cartModal" onclick="getCartProducts()">View Cart</button>
-<jsp:include page="cart.jsp"></jsp:include>
-
-
+<!-- CART -->
+	<!-- Button for View Cart -->	
+	<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#cartModal" onclick="getCartProducts()">View Cart</button>
+	<jsp:include page="cart.jsp"></jsp:include>
+	<!-- Button for Add to Cart -->
+	<button class="btn btn-primary btn-lg" onclick="addProductToCart(3,'Pr_3',12.9)">Add to Cart</button>
 
 
 

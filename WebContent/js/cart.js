@@ -42,12 +42,43 @@ function getCartProducts()
 	}
 	document.getElementById("cart-body").innerHTML=row;
 }
-//DONT USE addToProductCart
-function addtoProductCart(Id,Name,Price)
+function addProductToCart(Id,Name,Price)
 {
 	var cartProducts=getCookie("cartProduct");
-	cartProducts=cartProducts + Id +":" + Name +":"  + Price+ "|";
-	setCookie("cartProduct",cartProducts,10);
+	var newList="";
+	if(cartProducts!="")
+	{
+		var added=false;
+		cartProducts=cartProducts.substring(1,cartProducts.length-1);
+		products=cartProducts.split('|');
+		products.pop();
+		for(var i=0;i<products.length;i++)
+		{
+			var details=products[i].split(':');
+			var quant=parseInt(details[3])+1;
+			if(details[0]==Id)
+			{
+				newList=newList+details[0]+":" + details[1] +":"  + details[2]+ ":"+ 
+				quant+"|";
+				added=true;
+			}
+			else
+			{
+				newList=newList+products[i]+"|";
+			}
+		}
+		if(!added)
+		{
+			newList=newList+Id+ ":" +Name +":" + Price +":1|";
+		}
+	}
+	else
+	{
+		newList=newList+Id+ ":" +Name +":" + Price +":1|";
+		//System.out.println("First Added");
+	}
+	newList="\""+newList+"\"";
+	setCookie("cartProduct",newList,10);
 }
 
 function removeCart(Id)
