@@ -84,7 +84,7 @@
 				else
 				{%>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a data-toggle="modal" data-target="#myModal" onclick="getCartProducts()" href="#">Login</a></li>
+					<li><a data-toggle="modal" data-target="#myModal" href="#">Login</a></li>
 					<li><a href="#">SignUp</a></li>
 				</ul>
 				<%} %>
