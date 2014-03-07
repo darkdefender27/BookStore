@@ -10,8 +10,9 @@
 		   		<table class="table table-hover">
 		   			<thead>
 		   				<tr>
-		   				<th>Product 1</th>
+		   				<th>Product</th>
   						<th>Price</th>
+  						<th>Quantity</th>
 		   			</tr>
 		   			</thead>
 		   			<tbody id="cart-body">
