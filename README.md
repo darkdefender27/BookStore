@@ -1,7 +1,7 @@
 BookStore
 =========
 
-E commmerce website for selling old books.
+E-commmerce webapp for selling/buying old books.
 
 Notes:
 
